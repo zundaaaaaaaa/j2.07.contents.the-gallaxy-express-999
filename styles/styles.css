@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.video-player-container {
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 16 / 9; /* アスペクト比を維持 */
+}
+
+.side-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; /* ボタンの間隔をさらに小さくする */
+    margin: 0;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+button img {
+    width: auto;
+    height: 20px; /* 縦幅を20pxに設定 */
+}
+
+.main-video {
+    margin-left: 60px;
+    position: relative;
+    top: -20px; /* 動画の垂直方向の位置をピクセルで指定 */
+    left: 0px; /* 動画の水平方向の位置をピクセルで指定 */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    pointer-events: auto;
+}
+
+.main-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.control-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+    margin-bottom: 10px;
+}
+
+.control-buttons button {
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.modal-content {
+    position: relative;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    max-width: 300px;
+    pointer-events: auto;
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #fff;
+}
+
+.time-input {
+    width: 40px;
+    margin: 5px;
+    color: black;
+}
+
+#timerDisplay {
+    font-size: 2em;
+    margin-top: 10px;
+    color: white;
+}

@@ -147,6 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     backToContentsBtn.addEventListener('click', function() {
-        window.location.href = 'your-content-page-url.html'; // コンテンツ一覧ページのURLを指定
+        window.location.href = 'https://https-digibook-tokyo-syoseki-02-content.my.canva.site/english-song-all'; // コンテンツ一覧ページのURLを指定
     });
 });

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>動画再生UI</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="video-player-container">
+        <div class="side-bar">
+            <button id="fullscreenBtn"><img src="btns/sidebar/btn1.png" alt="全画面表示"></button>
+            <button id="helpBtn"><img src="btns/sidebar/btn2.png" alt="ヘルプ"></button>
+            <button id="timerBtn"><img src="btns/sidebar/btn3.png" alt="タイマー"></button>
+        </div>
+        <div class="main-video">
+            <div class="video-overlay" id="videoOverlay"></div>
+            <video id="mainVideo" poster="poster.jpg" disablepictureinpicture controlsList="nodownload noremoteplayback" style="pointer-events: none;">
+                <source src="videos/v1.mp4" type="video/mp4">
+                お使いのブラウザは動画タグに対応していません。
+            </video>
+            <div class="control-buttons">
+                <button id="playPauseBtn"><img src="btns/under/btn1.png" alt="再生"></button>
+                <button id="muteUnmuteBtn"><img src="btns/under/btn3.png" alt="ミュート"></button>
+                <button id="rewindBtn"><img src="btns/under/btn4.png" alt="10秒巻き戻し"></button>
+                <button id="forwardBtn"><img src="btns/under/btn5.png" alt="10秒進める"></button>
+                <button id="backToContentsBtn"><img src="btns/under/btn6.png" alt="コンテンツ一覧"></button>
+            </div>
+        </div>
+    </div>
+
+    <div id="timerModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModalBtn">&times;</span>
+            <label for="timerMinutes">分:</label>
+            <input type="number" id="timerMinutes" min="0" step="1" class="time-input">
+            <label for="timerSeconds">秒:</label>
+            <input type="number" id="timerSeconds" min="0" step="1" class="time-input">
+            <button id="startTimerBtn">スタート</button>
+            <button id="stopTimerBtn" class="hidden">ストップ</button>
+            <button id="resumeTimerBtn" class="hidden">再開</button>
+            <div id="timerDisplay">--:--</div>
+        </div>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
